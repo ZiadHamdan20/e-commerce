@@ -1,10 +1,18 @@
 import 'package:ecommerce_app/features/onboarding/screens/onboardingScreen.dart';
 import 'package:ecommerce_app/utils/constants/routes.dart';
 import 'package:ecommerce_app/utils/theme/custom_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+//.then((FirebaseApp value)=>Get.put(AuthenticationRepository())
   runApp(const MyApp());
 }
 
@@ -13,11 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery
-        .of(context)
-        .size);
-    return ScreenUtilInit(
-        designSize: const Size(392.7, 781.1),
+
+    return ScreenUtilInit(designSize: const Size(392.7, 781.1),
     minTextAdapt: true,
     splitScreenMode: true,
     builder: (context, child) {
