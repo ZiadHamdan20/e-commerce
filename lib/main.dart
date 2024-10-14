@@ -1,18 +1,34 @@
-import 'package:ecommerce_app/features/onboarding/screens/onboardingScreen.dart';
+import 'package:ecommerce_app/bindings/general_bindings.dart';
+import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/routes.dart';
 import 'package:ecommerce_app/utils/theme/custom_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
+import 'data/repositories/authentication/authentication_repository.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async{
-  WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//.then((FirebaseApp value)=>Get.put(AuthenticationRepository())
+  //widget biding
+  final WidgetsBinding widgetsBinding=WidgetsFlutterBinding.ensureInitialized();
+
+  //init Get local storage
+  await GetStorage.init();
+
+  //await splash Screen
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+
+
+
+  //init Firebase and auth repo
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((FirebaseApp value)=>Get.put(AuthenticationRepository()));
   runApp(const MyApp());
 }
 
@@ -26,14 +42,17 @@ class MyApp extends StatelessWidget {
     minTextAdapt: true,
     splitScreenMode: true,
     builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
 
           themeMode: ThemeMode.system,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-
-          home: const OnBoardingScreen(),
+          initialBinding: GeneralBindings(),
+          //show circular indicator meanwhile auth repo is deciding which screen to show
+          home: const Scaffold(backgroundColor: CustomColors.primary,
+              body: Center(child: CircularProgressIndicator(color: CustomColors.white,),),),
+          // home: const OnBoardingScreen(),
 
           onGenerateRoute: (settings) => onGenerateRoute(settings),
         );}

@@ -1,27 +1,29 @@
+import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
+import 'package:ecommerce_app/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/device/custom_device_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/constants/sizes.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({super.key, this.email});
+
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
+    final controller=Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pushReplacementNamed(PagesNames.logInScreen);
-              },
+              onPressed: () =>AuthenticationRepository.instance.logout(),
               icon: const Icon(CupertinoIcons.clear)),
         ],
       ),
@@ -50,7 +52,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: CustomSizes.spaceBetweenItems.h,
               ),
               Text(
-                "ziad.support@gmail.com",
+                email??"",
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -67,17 +69,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: CustomDeviceUtils.getScreenWidth(context).w,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushNamed(PagesNames.successScreen, arguments: [
-                      CustomTexts.yourAccountCreatedTitle,
-                      CustomTexts.yourAccountCreatedSubTitle,
-                      CustomImageStrings.staticSuccessIllus,
-                      () {
-                        Navigator.of(context).pushNamed(PagesNames.logInScreen);
-                      }
-                    ]);
-                  },
+                  onPressed: () =>controller.checkEmailVerificationStatus(),
                   child: const Text(CustomTexts.continuee),
                 ),
               ),
@@ -87,7 +79,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: CustomDeviceUtils.getScreenWidth(context).w,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () =>controller.sendEmailVerification(),
                   child: const Text(CustomTexts.resendEmail),
                 ),
               ),

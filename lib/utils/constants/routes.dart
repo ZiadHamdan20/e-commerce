@@ -64,7 +64,7 @@ onGenerateRoute(settings) {
     case PagesNames.verifyEmailScreen:
       return
         PageTransition(
-            child: const VerifyEmailScreen(),
+            child:  VerifyEmailScreen(email: args[0],),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings
@@ -74,7 +74,11 @@ onGenerateRoute(settings) {
     case PagesNames.successScreen:
       return
         PageTransition(
-            child:  SuccessScreen(title: args[0], subTitle: args[1], image: args[2], onPressed: args[3],),
+            child:  SuccessScreen(
+              title: args[0],
+              subTitle: args[1],
+              image: args[2],
+              onPressed: args[3],),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

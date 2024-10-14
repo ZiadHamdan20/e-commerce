@@ -3,14 +3,17 @@ import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/helpers/custom_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/constants/sizes.dart';
+import '../../authentication/controllers/signup/signup_controller.dart';
 
 class CustomCheckboxAndPrivacy extends StatelessWidget {
   const CustomCheckboxAndPrivacy({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller=SignUpController.instance;
     final isDarkMode = CustomHelpers.isDarkMode(context);
 
     return Row(
@@ -18,9 +21,10 @@ class CustomCheckboxAndPrivacy extends StatelessWidget {
         SizedBox(
           width: 24.w,
           height: 24.h,
-          child: Checkbox(
-            onChanged: (value) {},
-            value: true,
+          child: Obx(()=> Checkbox(
+              onChanged: (value) {controller.privacyPolicy.value = !controller.privacyPolicy.value;},
+              value: controller.privacyPolicy.value,
+            ),
           ),
         ),
         const SizedBox(

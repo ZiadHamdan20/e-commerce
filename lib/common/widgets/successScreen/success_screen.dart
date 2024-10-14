@@ -6,6 +6,7 @@ import 'package:ecommerce_app/utils/device/custom_device_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key,
@@ -28,8 +29,7 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
 
             children: [
-              Image(image:  AssetImage(
-                  image),width: CustomDeviceUtils.getScreenWidth(context).w * 0.6,),
+              Lottie.asset(image,width: MediaQuery.of(context).size.width.w*0.6),
 
               SizedBox(height: CustomSizes.spaceBetweenSections.h,),
 
