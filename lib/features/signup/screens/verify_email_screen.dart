@@ -23,7 +23,7 @@ class VerifyEmailScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () =>AuthenticationRepository.instance.logout(),
+              onPressed: () async{await AuthenticationRepository.instance.logout();},
               icon: const Icon(CupertinoIcons.clear)),
         ],
       ),

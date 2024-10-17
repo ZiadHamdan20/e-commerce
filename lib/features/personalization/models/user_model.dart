@@ -26,8 +26,12 @@ class UserModel {
   });
   /// Helper function to get the full name.
   String get fullName => '$firstName $lastName';
+
+
   /// Helper function to format phone number.
   String get formattedPhoneNo => CustomFormatters.formatPhoneNumber(phoneNumber);
+
+
   /// Static function to split full name into first and last name.
   static List<String> nameParts (fullName) => fullName.split(" ");
 

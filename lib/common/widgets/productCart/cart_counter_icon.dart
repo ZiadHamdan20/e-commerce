@@ -35,7 +35,7 @@ class CartCounterWidget extends StatelessWidget {
             height: 20.h,
             width: 20.w,
             decoration: BoxDecoration(
-                color: counterBgColor??(isDarkMode?CustomColors.black:CustomColors.white),
+                color: counterBgColor??(isDarkMode?CustomColors.white:CustomColors.black),
                 borderRadius: BorderRadius.circular(18)),
             child: Center(
               child: Text(
@@ -43,7 +43,7 @@ class CartCounterWidget extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .labelLarge!
-                    .copyWith(color: counterBgColor??(isDarkMode?CustomColors.white:CustomColors.black), fontSize: 12.sp),
+                    .copyWith(color: counterBgColor??(isDarkMode?CustomColors.black:CustomColors.white), fontSize: 12.sp),
               ),
             ),
           ),

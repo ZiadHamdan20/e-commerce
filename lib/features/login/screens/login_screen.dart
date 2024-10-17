@@ -1,10 +1,12 @@
-import 'package:ecommerce_app/features/login/widgets/custom_form_section.dart';
+import 'package:ecommerce_app/features/authentication/controllers/login/login_controller.dart';
+import 'package:ecommerce_app/features/login/widgets/custom_login_form.dart';
 import 'package:ecommerce_app/features/login/widgets/custom_title_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../common/style/CustomStyle.dart';
+import '../../../common/widgets/signInLogin/custom_social_buttons.dart';
 import '../../../common/widgets/signinLogin/custom_divider.dart';
-import '../../../common/widgets/signinLogin/custom_social_btns.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/texts.dart';
 
@@ -20,10 +22,10 @@ class LogInScreen extends StatelessWidget {
           child: Column(
             children: [
               const CustomTitleSection(),
-              const CustomFormSection(),
+              const CustomLoginForm(),
               const CustomDivider(dividerText: CustomTexts.orSignInWith,),
               SizedBox(height: CustomSizes.spaceBetweenSections.h/2,),
-              const CustomSocialBtns()
+              const CustomSocialButtons()
 
 
 

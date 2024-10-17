@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../common/widgets/signInLogin/custom_divider.dart';
-import '../../../common/widgets/signInLogin/custom_social_btns.dart';
+import '../../../common/widgets/signInLogin/custom_social_buttons.dart';
 
 
 class SignupScreen extends StatelessWidget {
@@ -39,7 +39,7 @@ class SignupScreen extends StatelessWidget {
                 dividerText: CustomTexts.orSignUpWith.capitalize!,
               ),
 
-              const CustomSocialBtns()
+              const CustomSocialButtons()
             ],
           ),
         ),

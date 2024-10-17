@@ -11,7 +11,8 @@ import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/sizes.dart';
 
 class CustomSignupForm extends StatelessWidget {
-  const CustomSignupForm({super.key});
+  const
+  CustomSignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,9 @@ final controller=Get.put(SignUpController());
           Row(
             children: [
               Expanded(
-                  child: TextFormField(
+                  child:
+                      //FirstName
+                  TextFormField(
                     validator: (value)=>CustomValidator.validateEmptyText("First name", value),
                     controller: controller.firstName,
                     decoration: const InputDecoration(
@@ -33,7 +36,9 @@ final controller=Get.put(SignUpController());
                 width: CustomSizes.spaceBetweenItems.w,
               ),
               Expanded(
-                  child: TextFormField(
+                  child:
+                      //LastName
+                  TextFormField(
                     validator: (value)=>CustomValidator.validateEmptyText("Last name", value),
                     controller: controller.lastName,
                     decoration: const InputDecoration(
@@ -45,6 +50,7 @@ final controller=Get.put(SignUpController());
           SizedBox(
             height: CustomSizes.spaceBetweenInputFields.h,
           ),
+          //UserName
           TextFormField(
             validator: (value)=>CustomValidator.validateEmptyText("Username", value),
             controller: controller.username,
@@ -55,6 +61,7 @@ final controller=Get.put(SignUpController());
           SizedBox(
             height: CustomSizes.spaceBetweenInputFields.h,
           ),
+          //Email
           TextFormField(
             validator: (value)=>CustomValidator.validateEmail( value),
             controller: controller.email,
@@ -66,6 +73,7 @@ final controller=Get.put(SignUpController());
             height: CustomSizes.spaceBetweenInputFields.h,
           ),
 
+          //PhoneNumber
           TextFormField(
             validator: (value)=>CustomValidator.validatePhoneNumber( value),
             controller: controller.phoneNumber,
@@ -77,6 +85,8 @@ final controller=Get.put(SignUpController());
           SizedBox(
             height: CustomSizes.spaceBetweenInputFields.h,
           ),
+
+          //Password
           Obx(
     ()=> TextFormField(
               validator: (value)=>CustomValidator.validatePassword( value),

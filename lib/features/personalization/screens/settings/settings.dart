@@ -2,6 +2,7 @@ import 'package:ecommerce_app/common/widgets/appBar/custom_app_bar.dart';
 import 'package:ecommerce_app/common/widgets/appBar/primary_header_container.dart';
 import 'package:ecommerce_app/common/widgets/listTiles/settings_menu_tile.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
@@ -135,7 +136,7 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                   SizedBox(
                     width: double.infinity.w,
-                    child: OutlinedButton(onPressed: (){},child: const Text(CustomTexts.logout),),
+                    child: OutlinedButton(onPressed: () async{await AuthenticationRepository.instance.logout();},child: const Text(CustomTexts.logout),),
 
                   ),
                   SizedBox(height: CustomSizes.spaceBetweenSections.h*2.5,)
