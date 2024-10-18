@@ -99,7 +99,7 @@ onGenerateRoute(settings) {
     case PagesNames.resetPasswordScreen:
       return
         PageTransition(
-            child:  const ResetPasswordScreen(),
+            child:   ResetPasswordScreen(email: args[0]),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

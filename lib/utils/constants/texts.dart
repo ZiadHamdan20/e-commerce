@@ -22,7 +22,7 @@ abstract class CustomTexts {
 
   static const String accountSettings = "Account Settings";
 
-  static const String logout = "logout";
+  static const String logout = "Logout";
 
   static const String firstName = "First Name";
   static const String lastName = "Last Name";

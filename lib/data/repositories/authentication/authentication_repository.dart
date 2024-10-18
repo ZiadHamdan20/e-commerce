@@ -21,6 +21,7 @@ class AuthenticationRepository extends GetxController {
 //called from main.dart on app launch
   @override
   void onReady() {
+    //super.onReady();
     FlutterNativeSplash.remove();
     screenRedirect();
   }
@@ -28,6 +29,7 @@ class AuthenticationRepository extends GetxController {
   //function to show relevant screen
   screenRedirect() async {
     final user = _auth.currentUser;
+    print(user);
     if (user != null) {
       //if user logged in
       if (user.emailVerified) {
@@ -109,6 +111,22 @@ class AuthenticationRepository extends GetxController {
 
   /// [ReAuthenticate] Re Authenticate User
   /// [EmailAuthentication] FORGET PASSWORD
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw CustomFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw CustomFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const CustomFormatException();
+    } on PlatformException catch (e) {
+      throw CustomPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
 /* ----------------------Federated identity & social sign-in ---------------------------*/
 
   /// [GoogleAuthentication] - GOOGLE
