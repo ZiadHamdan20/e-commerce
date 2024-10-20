@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/features/authentication/controllers/login/login_controller.dart';
-import 'package:ecommerce_app/features/login/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/utils/constants/pages_names.dart';
 import 'package:ecommerce_app/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +26,7 @@ class CustomLoginForm extends StatelessWidget {
           TextFormField(
             controller: controller.email,
             validator: (value)=>CustomValidator.validateEmail(value),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText:CustomTexts.email ),),
 

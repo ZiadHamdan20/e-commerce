@@ -1,9 +1,7 @@
-import 'package:ecommerce_app/features/authentication/controllers/login/login_controller.dart';
 import 'package:ecommerce_app/features/login/widgets/custom_login_form.dart';
 import 'package:ecommerce_app/features/login/widgets/custom_title_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import '../../../common/style/CustomStyle.dart';
 import '../../../common/widgets/signInLogin/custom_social_buttons.dart';
 import '../../../common/widgets/signinLogin/custom_divider.dart';

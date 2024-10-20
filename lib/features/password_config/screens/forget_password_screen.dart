@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/features/authentication/controllers/forget_password/forget_password_controller.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/device/custom_device_utils.dart';

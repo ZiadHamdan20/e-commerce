@@ -16,6 +16,7 @@ import '../../common/widgets/successScreen/success_screen.dart';
 import '../../features/password_config/screens/forget_password_screen.dart';
 import '../../features/onboarding/screens/onboardingScreen.dart';
 import '../../features/password_config/screens/reset_password_screen.dart';
+import '../../features/personalization/screens/profile/widgets/change_name.dart';
 import '../../features/personalization/screens/profile/profile.dart';
 import '../../features/personalization/screens/settings/settings.dart';
 import '../../features/shop/screens/all_products/all_products.dart';
@@ -269,6 +270,16 @@ onGenerateRoute(settings) {
       return
         PageTransition(
             child:  const BrandProducts(),
+            type: PageTransitionType.leftToRight,
+            duration: const Duration(milliseconds:500),
+            settings: settings
+
+        );
+
+    case PagesNames.changeNameScreen:
+      return
+        PageTransition(
+            child:  const ChangeNameScreen(),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

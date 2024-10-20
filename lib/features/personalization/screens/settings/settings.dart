@@ -30,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
                 CustomAppBar(title: Text(CustomTexts.account,style: Theme.of(context).textTheme.headlineMedium!.copyWith(color:CustomColors.white ),),),
 
                 //user profile card
-                 UserProfileTile(onTap: (){
+                 UserProfileTile(onPressed: (){
                   Navigator.of(context).pushNamed(PagesNames.profileScreen);
                 },),
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,),

@@ -3,17 +3,23 @@ import 'package:ecommerce_app/common/widgets/images/circular_Image.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
+import 'package:ecommerce_app/utils/constants/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../controllers/user_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller=UserController.instance;
+
     return  Scaffold(
       appBar: CustomAppBar(
         title: Text(CustomTexts.profile,style: Theme.of(context).textTheme.headlineMedium,),
@@ -45,8 +51,8 @@ class ProfileScreen extends StatelessWidget {
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
-              ProfileMenu(onPressed: () {  }, title: CustomTexts.firstName, value: 'Ziad',),
-              ProfileMenu(onPressed: () {  }, title: CustomTexts.lastName, value: 'Hamdan',),
+              ProfileMenu(onPressed: () { Get.offNamed(PagesNames.changeNameScreen); }, title: CustomTexts.name, value: controller.user.value.fullName,),
+              ProfileMenu(onPressed: () {  }, title: CustomTexts.userName, value: controller.user.value.username,),
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
               const Divider(),
@@ -56,9 +62,9 @@ class ProfileScreen extends StatelessWidget {
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
-              ProfileMenu(onPressed: () {  }, title: CustomTexts.userId, icon:Iconsax.copy,value: '45879',),
-              ProfileMenu(onPressed: () {  }, title: CustomTexts.email, value: 'ziadhamdan99.it@gmail.com',),
-              ProfileMenu(onPressed: () {  }, title: CustomTexts.phoneNumber, value: '+963-933-228-963',),
+              ProfileMenu(onPressed: () {  }, title: CustomTexts.userId, icon:Iconsax.copy,value: controller.user.value.id,),
+              ProfileMenu(onPressed: () {  }, title: CustomTexts.email, value: controller.user.value.email,),
+              ProfileMenu(onPressed: () {  }, title: CustomTexts.phoneNumber, value: controller.user.value.phoneNumber,),
               ProfileMenu(onPressed: () {  }, title: CustomTexts.gender, value: 'Male',),
               ProfileMenu(onPressed: () {  }, title: CustomTexts.dateOfBirth, value: '25 jul, 1999',),
               const Divider(),
@@ -69,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
               Center(
                 child:
                 TextButton(
-                  onPressed: (){},
+                  onPressed: ()=>controller.deleteAccountWarningPopup(),
                   child: const Text(CustomTexts.closeAccount,style: TextStyle(color: Colors.red),),
                 ),
               )

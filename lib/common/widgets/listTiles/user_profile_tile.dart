@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_app/features/personalization/controllers/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,23 +9,23 @@ import '../images/circular_Image.dart';
 
 class UserProfileTile extends StatelessWidget {
   const UserProfileTile({
-    super.key, this.onTap,
+    super.key, this.onPressed,
   });
 
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
+    final controller=UserController.instance;
     return ListTile(
-      onTap: onTap,
       leading: const CircularImage(
         image: CustomImageStrings.user,
         width:50 ,
         height: 50,
         padding: 0,
       ),
-      title: Text("Ziad Hamdan",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: CustomColors.white),),
-      subtitle: Text("Ziadhamdan99.it@gmail.com",style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: CustomColors.white),),
-      trailing: IconButton(onPressed: (){},icon: const Icon(Iconsax.edit,color: CustomColors.white,),),
+      title: Text(controller.user.value.fullName,style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: CustomColors.white),),
+      subtitle: Text(controller.user.value.email,style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: CustomColors.white),),
+      trailing: IconButton(onPressed: onPressed,icon: const Icon(Iconsax.edit,color: CustomColors.white,),),
     );
   }
 }

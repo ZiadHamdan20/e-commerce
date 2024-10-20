@@ -24,6 +24,7 @@ abstract class PagesNames
   static const allBrandsScreen="/AllBrandsScreen";
   static const customSortableProducts="/CustomSortableProducts";
   static const brandProducts="/BrandProducts";
+  static const changeNameScreen="/ChangeNameScreen";
 
 
 
