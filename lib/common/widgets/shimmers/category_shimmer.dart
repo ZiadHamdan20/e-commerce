@@ -19,7 +19,7 @@ class CustomCategoryShimmer extends StatelessWidget {
           shrinkWrap: true,
           itemCount: itemCount,
           scrollDirection: Axis.horizontal,
-          separatorBuilder: (_, __) =>  SizedBox(width: CustomSizes.spaceBetweenItems),
+          separatorBuilder: (_, __) =>  const SizedBox(width: CustomSizes.spaceBetweenItems),
           itemBuilder: (_, __) {
             Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,13 +27,14 @@ class CustomCategoryShimmer extends StatelessWidget {
           [
             ///Image
       CustomShimmerEffect(width: 55.w, height: 55.h, radius: 55.r),
-      SizedBox(height: CustomSizes.spaceBetweenSections/2),
+      const SizedBox(height: CustomSizes.spaceBetweenSections/2),
 
           ///Text
             CustomShimmerEffect(width: 55.w, height: 8.h,),
 
       ],
       );
+            return null;
   },)
     );
   }

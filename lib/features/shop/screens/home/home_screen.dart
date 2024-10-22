@@ -31,10 +31,10 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
               children: [
                 //AppBar
-                 CustomHomeAppBar(),
+                 const CustomHomeAppBar(),
                 SizedBox(height: CustomSizes.spaceBetweenSections.h/2,),
 
-                 CustomSearchContainer(
+                 const CustomSearchContainer(
                   text: CustomTexts.searchInStore,
                   icon: Iconsax.search_normal,
                 ),
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(
                             height: CustomSizes.spaceBetweenItems.h,
                           ),
-                          CustomHomeCategories(),
+                          const CustomHomeCategories(),
                         ])),
 
 
