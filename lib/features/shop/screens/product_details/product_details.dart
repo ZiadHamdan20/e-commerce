@@ -50,7 +50,7 @@ class ProductDetails extends StatelessWidget {
 
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                 /// description
-                const SectionHeading(headTitle: "Description",showActionBtn: false,),
+                const CustomSectionHeading(headTitle: "Description",showActionBtn: false,),
                 SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
                 ReadMoreText("This is a product  description for a green Nike shoes ,its a trainers with high quality fabric and sole u can choose the color and size u want ,try your best and wish u a happy shopping experience  ",
                   trimLines: 2,
@@ -66,7 +66,7 @@ class ProductDetails extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SectionHeading(headTitle: "Reviews(199)",showActionBtn: false,onPressed: (){},),
+                    CustomSectionHeading(headTitle: "Reviews(199)",showActionBtn: false,onPressed: (){},),
                     IconButton(onPressed: (){
                       Navigator.of(context).pushNamed(PagesNames.productReviewsScreen);
                     }, icon: const Icon(Iconsax.arrow_right_3)),

@@ -31,10 +31,10 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
               children: [
                 //AppBar
-                const HomeAppBar(),
+                 CustomHomeAppBar(),
                 SizedBox(height: CustomSizes.spaceBetweenSections.h/2,),
 
-                const SearchContainer(
+                 CustomSearchContainer(
                   text: CustomTexts.searchInStore,
                   icon: Iconsax.search_normal,
                 ),
@@ -42,7 +42,23 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: CustomSizes.spaceBetweenSections.h,
                 ),
-                const HomeCategories(),
+                Padding(
+                    padding:
+                    const EdgeInsets.only(left: CustomSizes.defaultSpace),
+                    child: Column(
+                        children: [
+                          const CustomSectionHeading(
+                            headTitle: CustomTexts.popularCategories,
+                            showActionBtn: false,
+                          ),
+                          SizedBox(
+                            height: CustomSizes.spaceBetweenItems.h,
+                          ),
+                          CustomHomeCategories(),
+                        ])),
+
+
+
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,)
 
               ],
@@ -67,7 +83,7 @@ class HomeScreen extends StatelessWidget {
 
 
                     //heading
-                    SectionHeading(
+                    CustomSectionHeading(
                       headTitle: "Popular Products",
                       onPressed: () {Navigator.of(context).pushNamed(PagesNames.allProductsScreen);},
                     ),

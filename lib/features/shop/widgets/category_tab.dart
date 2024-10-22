@@ -2,6 +2,7 @@
 import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/productCart/product_card_vertical.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/shop/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,8 +13,9 @@ import 'brand_show_case.dart';
 
 class CustomCategoryTab extends StatelessWidget {
   const CustomCategoryTab({
-    super.key,
+    super.key, required this.category,
   });
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class CustomCategoryTab extends StatelessWidget {
 
 
             //Products
-            SectionHeading(headTitle: CustomTexts.youMightLike,onPressed: (){},),
+            CustomSectionHeading(headTitle: CustomTexts.youMightLike,onPressed: (){},),
             SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
             CustomGridLayout(itemCount: 4, itemBuilder: (context,index){

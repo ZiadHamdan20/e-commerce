@@ -28,7 +28,7 @@ class SubCategoriesScreen extends StatelessWidget {
               Column(
                 children: [
                   //heading
-                  SectionHeading(headTitle: "Sports shirts",onPressed: (){},),
+                  CustomSectionHeading(headTitle: "Sports shirts",onPressed: (){},),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
 
                   SizedBox(

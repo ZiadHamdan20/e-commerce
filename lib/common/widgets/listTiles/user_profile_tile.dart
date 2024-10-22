@@ -7,8 +7,8 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
-import '../effects/shimmer.dart';
 import '../images/circular_Image.dart';
+import '../shimmers/shimmer.dart';
 
 class UserProfileTile extends StatelessWidget {
   const UserProfileTile({
@@ -22,7 +22,7 @@ class UserProfileTile extends StatelessWidget {
     return ListTile(
       leading:    Obx( (){
         final networkImage=controller.user.value.profilePicture;
-        final image=networkImage.isEmpty ? networkImage:CustomImageStrings.user;
+        final image=networkImage.isEmpty ? CustomImageStrings.user:networkImage;
 
         return controller.imageUploading.value
             ? CustomShimmerEffect(width: 55.w, height: 55.w,radius: 55.r,)

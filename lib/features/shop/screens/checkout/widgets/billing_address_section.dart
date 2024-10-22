@@ -13,7 +13,7 @@ class CustomBillingAddressSection extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      SectionHeading(headTitle: "Shipping Address",btnTitle: "Change",onPressed: (){},),
+      CustomSectionHeading(headTitle: "Shipping Address",btnTitle: "Change",onPressed: (){},),
 
         Text("Ziad Hamdan",style: Theme.of(context).textTheme.bodyLarge,),
 

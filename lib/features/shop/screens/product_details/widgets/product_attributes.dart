@@ -27,7 +27,7 @@ class ProductAttributes extends StatelessWidget {
               //title,price,stock status
               Row(
                 children: [
-                  const SectionHeading(headTitle: "Variation",showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: "Variation",showActionBtn: false,),
                   SizedBox(width: CustomSizes.spaceBetweenItems.w,),
 
                   Column(
@@ -75,7 +75,7 @@ class ProductAttributes extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
-            const SectionHeading(headTitle: "Colors",showActionBtn: false,),
+            const CustomSectionHeading(headTitle: "Colors",showActionBtn: false,),
             SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
         Wrap(
           spacing: 8,
@@ -93,7 +93,7 @@ class ProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SectionHeading(headTitle: "Size",showActionBtn: false,),
+            const CustomSectionHeading(headTitle: "Size",showActionBtn: false,),
             SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
 
             Wrap(

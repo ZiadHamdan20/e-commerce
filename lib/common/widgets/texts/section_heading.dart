@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-class SectionHeading extends StatelessWidget {
-  const SectionHeading({
+class CustomSectionHeading extends StatelessWidget {
+  const CustomSectionHeading({
     super.key,
     this.btnTitle="View all",
     required this.headTitle,

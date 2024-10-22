@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce_app/common/widgets/effects/shimmer.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/helpers/custom_helpers.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
+import '../shimmers/shimmer.dart';
 
 
 
@@ -55,7 +55,7 @@ class CircularImage extends StatelessWidget {
             errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.red),
           )
               : Image(
-            image: const AssetImage(CustomImageStrings.user),
+            image:  AssetImage(image),
             color: overlayColor,
             fit: fit,
           ),

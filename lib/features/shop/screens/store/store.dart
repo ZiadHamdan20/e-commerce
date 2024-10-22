@@ -2,6 +2,7 @@ import 'package:ecommerce_app/common/widgets/appbar/custom_app_bar.dart';
 import 'package:ecommerce_app/common/widgets/appbar/tabbar.dart';
 import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/shop/controllers/category_controller.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 
 import 'package:ecommerce_app/utils/constants/sizes.dart';
@@ -21,9 +22,10 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories=CategoryController.instance.featuredCategories;
     final isDarkMode = CustomHelpers.isDarkMode(context);
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: CustomAppBar(
           title: Text(
@@ -53,7 +55,7 @@ class StoreScreen extends StatelessWidget {
                       ),
 
                       // search bar
-                      const SearchContainer(
+                      const CustomSearchContainer(
                         text: CustomTexts.searchInStore,
                         showBorder: true,
                         showBackground: false,
@@ -64,7 +66,7 @@ class StoreScreen extends StatelessWidget {
                       ),
 
                       // featured brands
-                      SectionHeading(
+                      CustomSectionHeading(
                         headTitle: CustomTexts.featuredBrands,
                         onPressed: () {Navigator.of(context).pushNamed(PagesNames.allBrandsScreen);},
                       ),
@@ -83,14 +85,21 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 //tabs
-                bottom: const CustomTabBar(tabs: [
-                  Tab(child: Text(CustomTexts.furniture),),
-                  Tab(child: Text(CustomTexts.sports),),
-                  Tab(child: Text(CustomTexts.electronics),),
-                  Tab(child: Text(CustomTexts.clothes),),
-                  Tab(child: Text(CustomTexts.cosmetics),),
+                bottom:  CustomTabBar
+                  (tabs:categories.map((category)=> Tab(child: Text(category.name),)).toList()
 
-                ],)
+
+                    //Dummy Data
+                // [
+                //   Tab(child: Text(CustomTexts.furniture),),
+                //   Tab(child: Text(CustomTexts.sports),),
+                //   Tab(child: Text(CustomTexts.electronics),),
+                //   Tab(child: Text(CustomTexts.clothes),),
+                //   Tab(child: Text(CustomTexts.cosmetics),),
+                //
+                // ],
+
+                ),
 
 
 
@@ -99,14 +108,16 @@ class StoreScreen extends StatelessWidget {
           },
 
           //body
-          body:  const TabBarView(
-            children: [
-              CustomCategoryTab(),
-              CustomCategoryTab(),
-              CustomCategoryTab(),
-              CustomCategoryTab(),
-              CustomCategoryTab(),
-            ],
+          body:   TabBarView(
+            children:categories.map((category)=>CustomCategoryTab(category: category,)).toList()
+              //Dummy Data
+            // [
+            //   CustomCategoryTab(),
+            //   CustomCategoryTab(),
+            //   CustomCategoryTab(),
+            //   CustomCategoryTab(),
+            //   CustomCategoryTab(),
+            // ],
           ),
         ),
       ),

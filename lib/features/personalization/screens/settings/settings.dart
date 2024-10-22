@@ -47,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
 
               child: Column(
                 children: [
-                  const SectionHeading(headTitle: CustomTexts.accountSettings,showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: CustomTexts.accountSettings,showActionBtn: false,),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
                    SettingsMenuTile(
@@ -99,7 +99,7 @@ class SettingsScreen extends StatelessWidget {
 
                   //App settings
                   SizedBox(height: CustomSizes.spaceBetweenSections.h,),
-                  const SectionHeading(headTitle: "App Settings",showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: "App Settings",showActionBtn: false,),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
 

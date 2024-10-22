@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/common/widgets/appBar/custom_app_bar.dart';
-import 'package:ecommerce_app/common/widgets/effects/shimmer.dart';
 import 'package:ecommerce_app/common/widgets/images/circular_Image.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../common/widgets/shimmers/shimmer.dart';
 import '../../controllers/user_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
               const Divider(),
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
-              const SectionHeading(headTitle: CustomTexts.profileInformation,showActionBtn: false,),
+              const CustomSectionHeading(headTitle: CustomTexts.profileInformation,showActionBtn: false,),
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
               const Divider(),
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
-              const SectionHeading(headTitle: CustomTexts.personalInformation,showActionBtn: false,),
+              const CustomSectionHeading(headTitle: CustomTexts.personalInformation,showActionBtn: false,),
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 

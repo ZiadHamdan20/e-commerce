@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
-class SearchContainer extends StatelessWidget {
-  const SearchContainer({
+class CustomSearchContainer extends StatelessWidget {
+  const CustomSearchContainer({
     super.key,
     required this.text,
     this.showBackground = true,

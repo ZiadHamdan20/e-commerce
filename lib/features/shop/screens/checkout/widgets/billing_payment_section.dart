@@ -15,7 +15,7 @@ class CustomBillingPaymentSection extends StatelessWidget {
     final isDarkMode=CustomHelpers.isDarkMode(context);
     return  Column(
       children: [
-        SectionHeading(headTitle: "Payment Method",
+        CustomSectionHeading(headTitle: "Payment Method",
           btnTitle: "Change",
           onPressed: (){},
         ),

@@ -1,6 +1,5 @@
 
 import 'package:ecommerce_app/common/widgets/appbar/custom_app_bar.dart';
-import 'package:ecommerce_app/common/widgets/effects/shimmer.dart';
 import 'package:ecommerce_app/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
@@ -9,9 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../common/widgets/productCart/cart_counter_icon.dart';
+import '../../../common/widgets/shimmers/shimmer.dart';
 
-class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({
+class CustomHomeAppBar extends StatelessWidget {
+  const CustomHomeAppBar({
     super.key,
   });
 
