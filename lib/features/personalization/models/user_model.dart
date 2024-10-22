@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() {
       username: data['Username'] ?? "",
       email: data['Email'] ?? "",
       phoneNumber: data['PhoneNumber'] ?? "",
-      profilePicture: data['Profile Picture'] ?? "",
+      profilePicture: data['ProfilePicture'] ?? "",
     );
   }else {
     // Handle the case when document data is null

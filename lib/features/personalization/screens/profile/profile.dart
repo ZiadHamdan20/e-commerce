@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/common/widgets/appBar/custom_app_bar.dart';
+import 'package:ecommerce_app/common/widgets/effects/shimmer.dart';
 import 'package:ecommerce_app/common/widgets/images/circular_Image.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/personalization/screens/profile/widgets/profile_menu.dart';
@@ -31,17 +32,36 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               //Profile picture
-              SizedBox(
-                width: double.infinity.w,
-                child: Column(
-                  children: [
-                    // profile pic
-                    CircularImage(image: CustomImageStrings.user,width: 80.w,height: 80.h,),
-                    TextButton(onPressed: (){}, child: const Text(CustomTexts.changeProfilePicture,))
 
-                  ],
+
+          SizedBox(
+          width: double.infinity.w,
+            child: Column(
+              children: [
+                // profile pic
+                Obx(() {
+                  final networkImage = controller.user.value.profilePicture;
+                  final image = networkImage.isNotEmpty ? networkImage : CustomImageStrings.user;
+
+                  print('Profile Image URL: $networkImage'); // Debug print
+
+                  return controller.imageUploading.value
+                      ? CustomShimmerEffect(width: 50.w, height: 50.w, radius: 50.r)
+                      : CircularImage(
+                    image: image,
+                    width: 55.w,
+                    height: 55.h,
+                    isNetworkImage: networkImage.isNotEmpty,
+                  );
+                }),
+                TextButton(
+                  onPressed: () => controller.uploadUserProfilePicture(),
+                  child: const Text(CustomTexts.changeProfilePicture),
                 ),
-              ),
+              ],
+            ),
+          ),
+
 
               //Details
               SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
