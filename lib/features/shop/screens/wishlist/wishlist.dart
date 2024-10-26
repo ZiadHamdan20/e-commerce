@@ -7,7 +7,7 @@ import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});

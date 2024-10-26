@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/common/widgets/shimmers/category_shimmer.dart';
 import 'package:ecommerce_app/features/shop/controllers/category_controller.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

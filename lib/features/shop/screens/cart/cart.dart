@@ -3,7 +3,7 @@ import 'package:ecommerce_app/features/shop/screens/cart/widgets/cart_items.dart
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

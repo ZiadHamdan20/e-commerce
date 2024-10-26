@@ -4,11 +4,12 @@ import 'package:ecommerce_app/common/widgets/listTiles/settings_menu_tile.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/listTiles/user_profile_tile.dart';
@@ -103,7 +104,8 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
 
-                  const SettingsMenuTile(
+                   SettingsMenuTile(
+                    onTap: (){Get.toNamed(PagesNames.loadDataScreen);},
                     icon: Iconsax.document_upload,
                     title: "Load Data",
                     subTitle: "Upload Data to your Cloud Firebase",

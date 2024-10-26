@@ -1,7 +1,7 @@
 // Controller to manage user-related functionality.
 import 'package:ecommerce_app/common/widgets/loaders/loaders.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:ecommerce_app/utils/popups/full_screen_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

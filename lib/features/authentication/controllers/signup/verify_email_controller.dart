@@ -7,7 +7,7 @@ import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find();

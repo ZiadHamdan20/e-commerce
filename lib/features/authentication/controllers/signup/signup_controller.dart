@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../data/repositories/authentication/authentication_repository.dart';
 import '../../../../utils/constants/image_strings.dart';
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 import '../../../../utils/helpers/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
 import '../../../personalization/models/user_model.dart';

@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/common/widgets/appBar/custom_app_bar.dart';
 import 'package:ecommerce_app/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';

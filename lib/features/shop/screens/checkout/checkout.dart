@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});

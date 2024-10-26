@@ -4,7 +4,7 @@ import 'package:ecommerce_app/features/shop/screens/product_details/widgets/prod
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/product_details_image_slider.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widgets/rating_and_share.dart';
-import 'package:ecommerce_app/utils/constants/pages_names.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

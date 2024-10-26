@@ -13,7 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../common/widgets/customShapes/search_container.dart';
 import '../../../../common/widgets/productCart/cart_counter_icon.dart';
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 import '../../widgets/brand_card.dart';
 import '../../widgets/category_tab.dart';
 

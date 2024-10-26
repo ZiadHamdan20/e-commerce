@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_categories_widget.dart';
 import 'package:ecommerce_app/features/shop/widgets/home_appbar.dart';
-import 'package:ecommerce_app/utils/constants/image_strings.dart';
 
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 
@@ -15,7 +14,7 @@ import '../../../../common/widgets/appbar/primary_header_container.dart';
 import '../../../../common/widgets/customShapes/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/productCart/product_card_vertical.dart';
-import '../../../../utils/constants/pages_names.dart';
+import '../../../../routs/pages_names.dart';
 import '../../widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -68,13 +67,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
                 child: Column(
                   children: [
-                    const PromoSlider(
-                      banners: [
-                        CustomImageStrings.promoBanner1,
-                        CustomImageStrings.promoBanner2,
-                        CustomImageStrings.promoBanner3
-                      ],
-                    ),
+                    const CustomPromoSlider(),
 
                     SizedBox(
                       height: CustomSizes.spaceBetweenSections.h,

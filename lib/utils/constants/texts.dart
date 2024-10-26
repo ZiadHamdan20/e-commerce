@@ -18,9 +18,11 @@ abstract class CustomTexts {
       "Discover Limitless Choices and Unmatched Convenience.";
   static const String account = "Account";
   static const String closeAccount = "Close Account";
+  static const String mainRecord = "Main Record";
 
 
   static const String accountSettings = "Account Settings";
+  static const String uploadData = "Upload Data";
 
   static const String logout = "Logout";
 

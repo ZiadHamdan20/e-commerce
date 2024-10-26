@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/bindings/general_bindings.dart';
+import 'package:ecommerce_app/routs/routes.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/constants/routes.dart';
 import 'package:ecommerce_app/utils/theme/custom_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           initialBinding: GeneralBindings(),
+         // getPages: AppRoutes.pages,
           //show circular indicator meanwhile auth repo is deciding which screen to show
           home: const Scaffold(backgroundColor: CustomColors.primary,
               body: Center(child: CircularProgressIndicator(color: CustomColors.white,),),),
