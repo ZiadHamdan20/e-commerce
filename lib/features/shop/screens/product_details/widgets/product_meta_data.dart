@@ -24,7 +24,7 @@ class ProductMetaData extends StatelessWidget {
         Row(
           children: [
             //sale tag
-            RoundedContainer(
+            CustomRoundedContainer(
               radius: CustomSizes.sm.r,
               backgroundColor: CustomColors.secondary.withOpacity(0.8),
               padding: EdgeInsets.symmetric(
@@ -55,13 +55,13 @@ class ProductMetaData extends StatelessWidget {
         SizedBox(height: CustomSizes.spaceBetweenItems.h/1.5,),
 
         //title
-        const ProductTitleText(title: "Green Nike sports shirt"),
+        const CustomProductTitleText(title: "Green Nike sports shirt"),
         SizedBox(height: CustomSizes.spaceBetweenItems.h/1.5,),
 
         //stock status
         Row(
           children: [
-            const ProductTitleText(title: "Status"),
+            const CustomProductTitleText(title: "Status"),
             SizedBox(width: CustomSizes.spaceBetweenItems.w,),
 
             Text("In Stock",style: Theme.of(context).textTheme.titleMedium,),
@@ -73,7 +73,7 @@ class ProductMetaData extends StatelessWidget {
         Row(
           children: [
             CircularImage(image: CustomImageStrings.sportIcon,width: 32.w,height: 32.h,overlayColor: isDarkMode?CustomColors.white:CustomColors.black,),
-            const BrandTitleTextWithVerifiedIcon(title: "Nike",brandTextSize:TextSizes.medium,),
+            const CustomBrandTitleTextWithVerifiedIcon(title: "Nike",brandTextSize:TextSizes.medium,),
           ],
         )
 

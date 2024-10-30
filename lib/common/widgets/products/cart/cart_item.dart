@@ -22,7 +22,7 @@ class CustomCartItem extends StatelessWidget {
     return Row(
       children: [
         //image
-        RoundedImage(
+        CustomRoundedImage(
           imgUrl: CustomImageStrings.productImage1,
           width: 60.w,
           height: 60.h,
@@ -39,8 +39,8 @@ class CustomCartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const BrandTitleTextWithVerifiedIcon(title: "Nike"),
-              const Flexible(child: ProductTitleText(title: "Green Sports Shoes",maxLines: 1,)),
+              const CustomBrandTitleTextWithVerifiedIcon(title: "Nike"),
+              const Flexible(child: CustomProductTitleText(title: "Green Sports Shoes",maxLines: 1,)),
               //Attributes
               Text.rich(TextSpan(
                   children:[

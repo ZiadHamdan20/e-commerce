@@ -17,8 +17,7 @@ class CustomGridLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         padding: EdgeInsets.zero,
-
-         itemCount: itemCount,
+        itemCount: itemCount,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(

@@ -18,7 +18,7 @@ class OrderListItems extends StatelessWidget {
       separatorBuilder: (_,__)=>SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
 
-      itemBuilder:(_,index)=> RoundedContainer(
+      itemBuilder:(_,index)=> CustomRoundedContainer(
         showBorder: true,
         padding: const EdgeInsets.all(CustomSizes.md),
         backgroundColor: isDarkMode?CustomColors.dark:CustomColors.light,

@@ -16,7 +16,7 @@ class CustomCouponCode extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDarkMode=CustomHelpers.isDarkMode(context);
 
-    return RoundedContainer(showBorder: true,
+    return CustomRoundedContainer(showBorder: true,
       backgroundColor: isDarkMode?CustomColors.dark:CustomColors.white,
       padding: EdgeInsets.only(top: CustomSizes.sm.h,bottom: CustomSizes.sm.h,right: CustomSizes.sm.w,left: CustomSizes.md.w),
       child: Row(

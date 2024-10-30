@@ -19,7 +19,7 @@ class ProductAttributes extends StatelessWidget {
     return  Column(
       //Selected attributes pricing & description
       children: [
-        RoundedContainer(
+        CustomRoundedContainer(
           padding: const EdgeInsets.all(CustomSizes.md),
           backgroundColor: isDarkMode?CustomColors.darkerGrey:CustomColors.grey,
           child:Column(
@@ -36,7 +36,7 @@ class ProductAttributes extends StatelessWidget {
 
                       Row(
                         children: [
-                          const ProductTitleText(title: "Price : ",smallSize: true,),
+                          const CustomProductTitleText(title: "Price : ",smallSize: true,),
                           SizedBox(width: CustomSizes.spaceBetweenItems.w,),
 
                           //actual price
@@ -50,7 +50,7 @@ class ProductAttributes extends StatelessWidget {
 
                       //Stock
                       Row(children: [
-                        const ProductTitleText(title: "Stock : ",smallSize: true,),
+                        const CustomProductTitleText(title: "Stock : ",smallSize: true,),
                         Text("In Stock",style: Theme.of(context).textTheme.titleMedium,)
 
                       ],)
@@ -62,7 +62,7 @@ class ProductAttributes extends StatelessWidget {
               ),
               
               //Variation description
-              const ProductTitleText(title: "this is the desc of the product...it can go up to 4 max Lines")
+              const CustomProductTitleText(title: "this is the desc of the product...it can go up to 4 max Lines")
 
               //variation description
             ],

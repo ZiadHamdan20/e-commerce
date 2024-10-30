@@ -49,7 +49,7 @@ class ProductImageSlider extends StatelessWidget {
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (_,index) {
                     return
-                      RoundedImage(
+                      CustomRoundedImage(
                           width: 80.w,
                           backgroundColor: isDarkMode?CustomColors.dark:CustomColors.white,
                           border:Border.all(color: CustomColors.primary),

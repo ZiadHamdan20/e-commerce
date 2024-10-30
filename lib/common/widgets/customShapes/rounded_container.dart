@@ -3,8 +3,8 @@ import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class RoundedContainer extends StatelessWidget {
-  const RoundedContainer(
+class CustomRoundedContainer extends StatelessWidget {
+  const CustomRoundedContainer(
       {super.key,
       this.width,
       this.height,

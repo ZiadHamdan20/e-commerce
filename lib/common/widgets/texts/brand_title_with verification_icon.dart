@@ -7,8 +7,8 @@ import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 
-class BrandTitleTextWithVerifiedIcon extends StatelessWidget {
-  const BrandTitleTextWithVerifiedIcon({
+class CustomBrandTitleTextWithVerifiedIcon extends StatelessWidget {
+  const CustomBrandTitleTextWithVerifiedIcon({
     super.key,
     required this.title,
     this.maxLines = 1,

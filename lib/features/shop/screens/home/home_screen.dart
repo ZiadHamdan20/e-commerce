@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_categories_widget.dart';
 import 'package:ecommerce_app/features/shop/widgets/home_appbar.dart';
@@ -8,6 +9,7 @@ import 'package:ecommerce_app/utils/constants/texts.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appbar/primary_header_container.dart';
@@ -15,6 +17,7 @@ import '../../../../common/widgets/customShapes/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/productCart/product_card_vertical.dart';
 import '../../../../routs/pages_names.dart';
+import '../../controllers/product_controller.dart';
 import '../../widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,6 +25,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller=Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -69,27 +73,31 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     const CustomPromoSlider(),
 
-                    SizedBox(
-                      height: CustomSizes.spaceBetweenSections.h,
-                    ),
-
-
+                    SizedBox(height: CustomSizes.spaceBetweenSections.h,),
 
                     //heading
                     CustomSectionHeading(
                       headTitle: "Popular Products",
                       onPressed: () {Navigator.of(context).pushNamed(PagesNames.allProductsScreen);},
                     ),
-                    SizedBox(
-                      height: CustomSizes.spaceBetweenSections.h,
-                    ),
+                    SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                     //Popular Products
-                    CustomGridLayout(
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return const ProductCardVertical();
-                      },
-                    ),
+
+                    Obx((){
+                      if(controller.isLoading.value)return CustomVerticalProductShimmer();
+
+                      if (controller.featuredProducts.isEmpty) {
+                        return Center(child: Text("No Data Found!",style: Theme.of(context).textTheme.titleMedium,),);
+                      }
+
+                      return CustomGridLayout(
+                        itemCount: controller.featuredProducts.length,
+                        itemBuilder: (_, index) {
+                          return  CustomProductCardVertical( product: controller.featuredProducts[index],);
+                        },
+                      );
+
+                    })
                   ],
                 ))
           ],

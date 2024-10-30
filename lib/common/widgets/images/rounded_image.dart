@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/constants/sizes.dart';
 
-class RoundedImage extends StatelessWidget {
-  const RoundedImage({
+class CustomRoundedImage extends StatelessWidget {
+  const CustomRoundedImage({
     super.key,
     this.width,
     this.height,

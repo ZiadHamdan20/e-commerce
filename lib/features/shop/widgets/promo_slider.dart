@@ -34,7 +34,7 @@ class CustomPromoSlider extends StatelessWidget {
                 children: [
                   CarouselSlider(
                       options:CarouselOptions(viewportFraction: 1,onPageChanged: (index,_)=>controller.updatePageIndicator(index)),
-                      items:  controller.banners.map((banner)=>RoundedImage(imgUrl: banner.imageUrl,isNetworkImage: true,onPressed: ()=>Get.toNamed(banner.targetScreen),)).toList()
+                      items:  controller.banners.map((banner)=>CustomRoundedImage(imgUrl: banner.imageUrl,isNetworkImage: true,onPressed: ()=>Get.toNamed(banner.targetScreen),)).toList()
                   ),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
                   Center(

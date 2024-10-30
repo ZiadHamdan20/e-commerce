@@ -16,7 +16,7 @@ class CustomSingleAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = CustomHelpers.isDarkMode(context);
 
-    return RoundedContainer(
+    return CustomRoundedContainer(
       padding: const EdgeInsets.all(CustomSizes.defaultSpace),
       width: double.infinity,
       showBorder: true,

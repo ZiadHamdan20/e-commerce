@@ -38,7 +38,7 @@ class CheckoutScreen extends StatelessWidget {
               SizedBox(height: CustomSizes.spaceBetweenSections.h,),
 
               //Billing section
-              RoundedContainer(
+              CustomRoundedContainer(
                 showBorder: true,
                 padding: const EdgeInsets.all(CustomSizes.md),
                 backgroundColor: isDarkMode?CustomColors.black:CustomColors.white,

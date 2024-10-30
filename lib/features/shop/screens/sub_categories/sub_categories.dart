@@ -21,7 +21,7 @@ class SubCategoriesScreen extends StatelessWidget {
           child: Column(
             children: [
               //Banner
-              RoundedImage(imgUrl: CustomImageStrings.banner4,width: double.infinity.w,height: null,applyImgRadius: true,),
+              CustomRoundedImage(imgUrl: CustomImageStrings.banner4,width: double.infinity.w,height: null,applyImgRadius: true,),
               SizedBox(height: CustomSizes.spaceBetweenSections.h,),
 
               //sub categories

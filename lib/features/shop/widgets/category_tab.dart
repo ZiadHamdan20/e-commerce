@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/texts.dart';
+import '../models/product_model.dart';
 import 'brand_show_case.dart';
 
 class CustomCategoryTab extends StatelessWidget {
@@ -46,7 +47,7 @@ class CustomCategoryTab extends StatelessWidget {
             SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
             CustomGridLayout(itemCount: 4, itemBuilder: (context,index){
-              return const ProductCardVertical();
+              return  CustomProductCardVertical(product:ProductModel.empty() ,);
             }),
 
           ],

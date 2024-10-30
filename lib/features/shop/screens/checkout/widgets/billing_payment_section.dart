@@ -23,7 +23,7 @@ class CustomBillingPaymentSection extends StatelessWidget {
 
         Row(
           children: [
-            RoundedContainer(
+            CustomRoundedContainer(
               width: 60.w,
               height: 35.h,
               backgroundColor: isDarkMode?CustomColors.light:CustomColors.white,

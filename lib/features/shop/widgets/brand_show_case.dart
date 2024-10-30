@@ -17,7 +17,7 @@ class BrandShowCase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RoundedContainer(
+    return CustomRoundedContainer(
       showBorder: true,
       borderColor: CustomColors.darkGrey,
       backgroundColor: Colors.transparent,
@@ -45,7 +45,7 @@ Widget brandTopProductImageWidget(String image,context)
 {
   final isDarkMode=CustomHelpers.isDarkMode(context);
 
-  return Expanded(child: RoundedContainer(
+  return Expanded(child: CustomRoundedContainer(
     height: 100.h,
     backgroundColor: isDarkMode?CustomColors.darkGrey:CustomColors.light,
     padding: const EdgeInsets.all(CustomSizes.sm),

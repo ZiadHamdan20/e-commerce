@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_app/features/shop/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -28,7 +29,7 @@ class CustomSortableProducts extends StatelessWidget {
         //Products
         CustomGridLayout(
             itemCount: 6,
-            itemBuilder: (_,index){return const ProductCardVertical();}),
+            itemBuilder: (_,index){return  CustomProductCardVertical(product:ProductModel.empty() ,);}),
 
 
       ],

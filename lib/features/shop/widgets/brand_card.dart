@@ -27,7 +27,7 @@ class BrandCard extends StatelessWidget {
     final bool isDarkMode=CustomHelpers.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
-      child: RoundedContainer(
+      child: CustomRoundedContainer(
         padding: const EdgeInsets.all(CustomSizes.sm),
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
@@ -52,7 +52,7 @@ class BrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BrandTitleTextWithVerifiedIcon(title: "Nike",brandTextSize: TextSizes.large,),
+                  const CustomBrandTitleTextWithVerifiedIcon(title: "Nike",brandTextSize: TextSizes.large,),
                   Text("260 products",overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.labelMedium,)
                 ],
               ),

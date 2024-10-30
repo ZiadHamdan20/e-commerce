@@ -28,7 +28,7 @@ class ProductCardHorizontal extends StatelessWidget {
       child: Row(
         children: [
           //thumbnail
-          RoundedContainer(
+          CustomRoundedContainer(
             height: 120.h,
             padding: const EdgeInsets.all(CustomSizes.sm),
             backgroundColor:
@@ -39,14 +39,14 @@ class ProductCardHorizontal extends StatelessWidget {
                 SizedBox(
                     height: 120.h,
                     width: 120.w,
-                    child: const RoundedImage(
+                    child: const CustomRoundedImage(
                       imgUrl: CustomImageStrings.productImage1,
                       applyImgRadius: true,
                     )),
 
                 Positioned(
                   top: 12,
-                  child: RoundedContainer(
+                  child: CustomRoundedContainer(
                     radius: CustomSizes.sm,
                     backgroundColor: CustomColors.secondary.withOpacity(0.8),
                     padding: EdgeInsets.symmetric(
@@ -85,9 +85,9 @@ class ProductCardHorizontal extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const ProductTitleText(title: 'Green Nike Half sleeves shirt',smallSize: true,),
+                      const CustomProductTitleText(title: 'Green Nike Half sleeves shirt',smallSize: true,),
                       SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
-                      const BrandTitleTextWithVerifiedIcon(title: "Nike")
+                      const CustomBrandTitleTextWithVerifiedIcon(title: "Nike")
                     ],
                   ),
 

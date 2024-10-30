@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../routs/pages_names.dart';
+import '../../models/product_model.dart';
 
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});
@@ -28,7 +29,7 @@ class WishlistScreen extends StatelessWidget {
           child: Column(
             children: [
               CustomGridLayout(itemCount: 4, itemBuilder: (context,index)
-              {return const ProductCardVertical();})
+              {return  CustomProductCardVertical(product:ProductModel.empty() ,);})
 
             ],
           ),

@@ -55,7 +55,7 @@ class UserReviewCard extends StatelessWidget {
         ),
         SizedBox(height: CustomSizes.spaceBetweenItems.h,),
         //Company review
-        RoundedContainer(
+        CustomRoundedContainer(
           backgroundColor: isDarkMode? CustomColors.darkerGrey:CustomColors.grey,
           child: Padding(
             padding: const EdgeInsets.all(CustomSizes.md,
