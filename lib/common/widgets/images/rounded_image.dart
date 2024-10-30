@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/utils/helpers/custom_helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +32,6 @@ class CustomRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode=CustomHelpers.isDarkMode(context);
     return GestureDetector(
       onTap: onPressed,
       child: Container(
