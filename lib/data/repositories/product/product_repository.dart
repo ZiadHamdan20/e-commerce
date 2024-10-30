@@ -23,7 +23,6 @@ class ProductRepository extends GetxController {
   Future<List<ProductModel>> getFeaturedProducts() async {
     try {
       final snapshot = await _db.collection('Products').where('IsFeatured', isEqualTo: true).limit(4).get();
-      print('Fetched ${snapshot.docs.length} featured products.'); // إضافة تسجيل
 
       return snapshot.docs.map((e) => ProductModel.fromSnapshot(e)).toList();
     } on FirebaseException catch (e) {
@@ -31,7 +30,6 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw CustomPlatformException(e.code).message;
     } catch (e) {
-      print('Error fetching products: $e'); // تسجيل الأخطاء
       throw 'Something went wrong. Please try again';
     }
   }
@@ -96,7 +94,7 @@ class ProductRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw e.message!;
     } on SocketException catch (e) {
-      throw e.message!;
+      throw e.message;
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
