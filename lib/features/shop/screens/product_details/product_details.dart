@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../../utils/constants/enums.dart';
+
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key, required this.product});
@@ -25,11 +27,10 @@ class ProductDetailsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child:Column(
           children: [
-            // product image slider
+            ///--  Product Image Slider
+             CustomProductImageSlider(product:product ,),
 
-            const ProductImageSlider(),
-
-            //Product details
+            ///-- Product Details
             Padding(padding: EdgeInsets.only(
               right: CustomSizes.defaultSpace.w,
               left: CustomSizes.defaultSpace.w,
@@ -40,21 +41,22 @@ class ProductDetailsScreen extends StatelessWidget {
                 const RatingAndShare(),
 
 
-                /// price,title,stock,bank
-                const ProductMetaData(),
-                /// attributes
-                const ProductAttributes(),
-                SizedBox(height: CustomSizes.spaceBetweenSections.h,),
-                /// checkout button
+                ///-- Price, Title, Stock, Bank
+                 CustomProductMetaData(product: product,),
+                ///-- Attributes
+                if(product.productType==ProductType.variable.toString()) CustomProductAttributes(product: product,),
+                if(product.productType==ProductType.variable.toString())SizedBox(height: CustomSizes.spaceBetweenSections.h,),
+                ///-- Checkout Button
                 SizedBox(
                     width:double.infinity.w,
                     child: ElevatedButton(onPressed: (){}, child: const Text("Checkout"))),
 
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,),
-                /// description
+                ///-- Description
                 const CustomSectionHeading(headTitle: "Description",showActionBtn: false,),
                 SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
-                ReadMoreText("This is a product  description for a green Nike shoes ,its a trainers with high quality fabric and sole u can choose the color and size u want ,try your best and wish u a happy shopping experience  ",
+                ReadMoreText(
+                  product.description??"",
                   trimLines: 2,
                   trimMode: TrimMode.Line,
                   trimCollapsedText: "Show more",

@@ -17,7 +17,7 @@ import '../../../../common/widgets/customShapes/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/productCart/product_card_vertical.dart';
 import '../../../../routs/pages_names.dart';
-import '../../controllers/product_controller.dart';
+import '../../controllers/product/product_controller.dart';
 import '../../widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                     //Popular Products
 
                     Obx((){
-                      if(controller.isLoading.value)return CustomVerticalProductShimmer();
+                      if(controller.isLoading.value)return const CustomVerticalProductShimmer();
 
                       if (controller.featuredProducts.isEmpty) {
                         return Center(child: Text("No Data Found!",style: Theme.of(context).textTheme.titleMedium,),);

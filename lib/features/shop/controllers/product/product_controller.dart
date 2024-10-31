@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-import '../../../common/widgets/loaders/loaders.dart';
-import '../../../data/repositories/product/product_repository.dart';
-import '../../../utils/constants/enums.dart';
-import '../models/product_model.dart';
+import '../../../../common/widgets/loaders/loaders.dart';
+import '../../../../data/repositories/product/product_repository.dart';
+import '../../../../utils/constants/enums.dart';
+import '../../models/product_model.dart';
 
 class ProductController extends GetxController {
   static ProductController get instance => Get.find();
