@@ -20,32 +20,34 @@ class ProductController extends GetxController {
 
   void fetchFeaturedProducts() async {
     try {
+      // show loader while loading products
       isLoading.value = true;
+      //fetch products
       final products = await productRepository.getFeaturedProducts();
+      //assign products
       featuredProducts.assignAll(products);
     } catch (e) {
-      print('Error in fetchFeaturedProducts: $e');
       CustomLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
     }
-    // try {
-    //   // Show loader while loading Products
-    //   isLoading.value = true;
-    //
-    //   // Fetch Products
-    //   final products = await productRepository.getFeaturedProducts();
-    //
-    //   // Assign Products
-    //   featuredProducts.assignAll(products);
-    // } catch (e) {
-    //   CustomLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    // } finally {
-    //   isLoading.value = false;
-    // }
+
   }
 
-  ///Get the product price or price range for variations
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try {
+
+      //fetch products
+      final products = await productRepository.getFeaturedProducts();
+      return products;
+    } catch (e) {
+      CustomLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
+
+  }
+
+  /// -- Get the product price or price range for variations
   String getProductPrice(ProductModel product) {
 
     double smallestPrice = double.infinity;
@@ -82,8 +84,7 @@ class ProductController extends GetxController {
     }
   }
 
-  // -- Calculate Discount Percentage
-
+  /// -- Calculate Discount Percentage
   String? calculateSalePercentage(double originalPrice, double? salePrice) {
 
     if (salePrice == null || salePrice <= 0.0) return null;

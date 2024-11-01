@@ -242,7 +242,7 @@ onGenerateRoute(settings) {
     case PagesNames.allProductsScreen:
       return
         PageTransition(
-            child:  const AllProductsScreen(),
+            child:   AllProductsScreen(title: args[0],query: args.length > 1 ? args[1] : null,futureMethod:args.length > 2 ? args[2] : null ,),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings
@@ -261,7 +261,7 @@ onGenerateRoute(settings) {
     case PagesNames.customSortableProducts:
       return
         PageTransition(
-            child:  const CustomSortableProducts(),
+            child:   CustomSortableProducts(products: args[0],),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

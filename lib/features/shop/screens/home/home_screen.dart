@@ -78,7 +78,11 @@ class HomeScreen extends StatelessWidget {
                     //heading
                     CustomSectionHeading(
                       headTitle: "Popular Products",
-                      onPressed: () {Navigator.of(context).pushNamed(PagesNames.allProductsScreen);},
+                      onPressed: () {Navigator.of(context).pushNamed(PagesNames.allProductsScreen,arguments: [
+                        "Popular Products",
+                        null,
+                        controller.fetchAllFeaturedProducts()
+                      ]);},
                     ),
                     SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                     //Popular Products
