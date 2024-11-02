@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/shop/models/brand_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,7 +27,7 @@ class BrandShowCase extends StatelessWidget {
       child: Column(
         children: [
           //brand with prod count
-          const BrandCard(showBorder: false,),
+           CustomBrandCard(showBorder: false,brand: BrandModel.empty(),),
 
           //brand top 3 prod images
 

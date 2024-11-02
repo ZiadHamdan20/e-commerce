@@ -64,6 +64,7 @@ class CustomProductCardVertical extends StatelessWidget {
                   ),
 
                   /// -- Sale Tag
+                  if(salePercentage != null)
                   Positioned(
                     top: 12,
                     left: 4,

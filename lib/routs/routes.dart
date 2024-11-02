@@ -270,7 +270,7 @@ onGenerateRoute(settings) {
     case PagesNames.brandProducts:
       return
         PageTransition(
-            child:  const BrandProducts(),
+            child:   BrandProducts(brand: args[0],),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

@@ -30,8 +30,8 @@ class BrandTitleText extends StatelessWidget {
                 : brandTextSize == TextSizes.large
                     ? Theme.of(context)
                         .textTheme
-                        .titleLarge!
-                        .copyWith(color: color)
+                        .labelLarge!
+                        .copyWith(color: color,fontWeight: FontWeight.w600)
                     : Theme.of(context)
                         .textTheme
                         .bodyMedium!

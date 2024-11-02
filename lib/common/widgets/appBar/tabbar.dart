@@ -14,7 +14,7 @@ class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
     return Material(
       color: isDarkMode?CustomColors.black:CustomColors.white,
       child: TabBar(
-        tabAlignment: TabAlignment.start,
+       // tabAlignment: TabAlignment.start,
         tabs: tabs,
         isScrollable: true,
         indicatorColor: CustomColors.primary,
