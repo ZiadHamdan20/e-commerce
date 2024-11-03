@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                         children: [
                           const CustomSectionHeading(
-                            headTitle: CustomTexts.popularCategories,
+                            headTitle: CustomTexts.popularCategories,textColor: Colors.white,
                             showActionBtn: false,
                           ),
                           SizedBox(

@@ -1,57 +1,87 @@
-
 import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/productCart/product_card_vertical.dart';
+import 'package:ecommerce_app/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_app/features/shop/controllers/category_controller.dart';
 import 'package:ecommerce_app/features/shop/models/category_model.dart';
+import 'package:ecommerce_app/features/shop/screens/store/widgets/category_brands.dart';
+import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/texts.dart';
-import '../models/product_model.dart';
-import 'brand_show_case.dart';
+import '../../../utils/helpers/cloud_helper_functions.dart';
 
 class CustomCategoryTab extends StatelessWidget {
   const CustomCategoryTab({
-    super.key, required this.category,
+    super.key,
+    required this.category,
   });
   final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
+    final controller = CategoryController.instance;
     return ListView(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      children: [
-        Padding(
-        padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-        child: Column(
-          children: [
-            //--Brands
-            const BrandShowCase(images:
-            [CustomImageStrings.productImage1,
-              CustomImageStrings.productImage2,
-              CustomImageStrings.productImage3],),
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+            child: Column(
+              children: [
+                /// -- Brands
+                CategoryBrands(category: category),
+                SizedBox(
+                  height: CustomSizes.spaceBetweenItems.h,
+                ),
 
-            const BrandShowCase(images:
-            [CustomImageStrings.productImage1,
-              CustomImageStrings.productImage2,
-              CustomImageStrings.productImage3],),
+                /// -- Products
+                FutureBuilder(
+                    future:
+                        controller.getCategoryProducts(categoryId: category.id),
+                    builder: (context, snapshot) {
+                      /// Handle Loader, No Record, OR Error Message
+                      final response =
 
-            SizedBox(height: CustomSizes.spaceBetweenItems.h,),
+                          CustomCloudHelperFunctions.checkMultiRecordState(
+                              snapshot: snapshot,
+                              loader: const CustomVerticalProductShimmer());
+                      if (response != null) return response;
 
-
-            //Products
-            CustomSectionHeading(headTitle: CustomTexts.youMightLike,onPressed: (){},),
-            SizedBox(height: CustomSizes.spaceBetweenItems.h,),
-
-            CustomGridLayout(itemCount: 4, itemBuilder: (context,index){
-              return  CustomProductCardVertical(product:ProductModel.empty() ,);
-            }),
-
-          ],
-        ),),]
-    );
+                      ///Record Found
+                      final products = snapshot.data!;
+                      return Column(
+                        children: [
+                          CustomSectionHeading(
+                            headTitle: CustomTexts.youMightLike,
+                            onPressed: () => Get.toNamed(
+                                PagesNames.allProductsScreen,
+                                arguments: [
+                                  category.name,
+                                  null,
+                                  controller.getCategoryProducts(
+                                      categoryId: category.id, limit: -1)
+                                ]),
+                          ),
+                          SizedBox(
+                            height: CustomSizes.spaceBetweenItems.h,
+                          ),
+                          CustomGridLayout(
+                              itemCount: products.length,
+                              itemBuilder: (_, index) {
+                                return CustomProductCardVertical(
+                                  product: products[index],
+                                );
+                              }),
+                        ],
+                      );
+                    }),
+              ],
+            ),
+          ),
+        ]);
   }
 }

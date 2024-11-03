@@ -19,6 +19,8 @@ Future<void> main() async{
 
   //init Get local storage
   await GetStorage.init();
+ // await hideStatusBar();
+
 
   //await splash Screen
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);

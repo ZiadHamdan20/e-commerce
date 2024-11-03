@@ -118,14 +118,7 @@ class StoreScreen extends StatelessWidget {
           //body
           body:   TabBarView(
             children:categories.map((category)=>CustomCategoryTab(category: category,)).toList()
-              //Dummy Data
-            // [
-            //   CustomCategoryTab(),
-            //   CustomCategoryTab(),
-            //   CustomCategoryTab(),
-            //   CustomCategoryTab(),
-            //   CustomCategoryTab(),
-            // ],
+
           ),
         ),
       ),

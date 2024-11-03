@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 
 import '../../../common/widgets/loaders/loaders.dart';
 import '../../../data/repositories/categories/category_repository.dart';
+import '../../../data/repositories/product/product_repository.dart';
 import '../models/category_model.dart';
+import '../models/product_model.dart';
 
 class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();
@@ -19,7 +21,7 @@ class CategoryController extends GetxController {
     super.onInit();
     fetchCategories();
   }
-
+/// -- Load Category data
   Future<void> fetchCategories() async {
     try {
       // Show loader while loading categories
@@ -42,4 +44,15 @@ class CategoryController extends GetxController {
 
     }
   }
+
+
+/// -- Load Selected Category data
+
+/// -- Get Category or Sub-Category Products
+  Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
+    // Fetch limited (4) products against each subCategory
+    final products = await ProductRepository.instance.getProductsForCategory(categoryId: categoryId, limit: limit);
+    return products;
+  }
+
 }

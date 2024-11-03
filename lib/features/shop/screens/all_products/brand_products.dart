@@ -19,7 +19,7 @@ class BrandProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller=BrandController.instance;
     return Scaffold(
-      appBar:  CustomAppBar(title: Text(brand.name),),
+      appBar:  CustomAppBar(title: Text(brand.name),showBackArrow: true,),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(CustomSizes.defaultSpace),
@@ -29,7 +29,7 @@ class BrandProducts extends StatelessWidget {
                CustomBrandCard(showBorder: true, brand: brand,),
               SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                FutureBuilder(
-                 future: controller.getBrandProducts(brand.id),
+                 future: controller.getBrandProducts(brandId:brand.id),
                  builder: (context, snapshot) {
                    /// Handle Loader , No Record, Or Error Message
                    const loader=CustomVerticalProductShimmer();
