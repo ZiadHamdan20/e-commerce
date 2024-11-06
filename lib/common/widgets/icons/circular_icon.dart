@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/helpers/custom_helpers.dart';
 
-class CircularIcon extends StatelessWidget {
-  const CircularIcon({
+class CustomCircularIcon extends StatelessWidget {
+  const CustomCircularIcon({
     super.key,
     required this.icon,
     this.onPressed,

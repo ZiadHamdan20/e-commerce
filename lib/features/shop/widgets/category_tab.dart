@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_app/common/widgets/productCart/product_card_vertical.dart';
 import 'package:ecommerce_app/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/controllers/category_controller.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../common/widgets/product_cards/product_card_vertical.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/texts.dart';
 import '../../../utils/helpers/cloud_helper_functions.dart';

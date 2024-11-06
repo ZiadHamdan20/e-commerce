@@ -8,7 +8,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/sizes.dart';
 import '../../layouts/grid_layout.dart';
-import '../../productCart/product_card_vertical.dart';
+import '../../product_cards/product_card_vertical.dart';
 
 class CustomSortableProducts extends StatelessWidget {
   const CustomSortableProducts({

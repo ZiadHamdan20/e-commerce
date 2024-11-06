@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../common/widgets/productCart/cart_counter_icon.dart';
+import '../../../common/widgets/product_cards/cart_counter_icon.dart';
 import '../../../common/widgets/shimmers/shimmer.dart';
 
 class CustomHomeAppBar extends StatelessWidget {

@@ -4,6 +4,7 @@ import 'package:ecommerce_app/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:ecommerce_app/utils/local_storage/storage_utility.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +32,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   //function to show relevant screen
-  screenRedirect() async {
+  void screenRedirect() async {
     //get current logged in user details
     final user = _auth.currentUser;
 
@@ -39,14 +40,21 @@ class AuthenticationRepository extends GetxController {
     if (user != null) {
       //if user logged in
       if (user.emailVerified) {
+
+        // Initialize User Specific Storage
+        await CustomLocalStorage.init(user.uid);
+
+        //is the user's email verified ,navigate to the main Navigation menu
         Get.offAllNamed(PagesNames.navigationMenu);
       } else {
+        //if the user's email is not verified,navigate to the verifyEmailScreen
         Get.offAllNamed(PagesNames.verifyEmailScreen,
             arguments: [_auth.currentUser?.email]);
       }
     } else {
       //local storage
       deviceStorage.writeIfNull("isFirstTime", true);
+
       //check if its the first time launching the app
       deviceStorage.read("isFirstTime") != true
           ? Get.offAllNamed(PagesNames

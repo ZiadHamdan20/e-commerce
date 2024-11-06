@@ -21,7 +21,7 @@ class CustomProductWithAddRemoveButton extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CircularIcon(
+            CustomCircularIcon(
               icon: Iconsax.minus,
               width: 32.w,
               height: 32.h,
@@ -43,7 +43,7 @@ class CustomProductWithAddRemoveButton extends StatelessWidget {
             SizedBox(
               width: CustomSizes.spaceBetweenItems.w,
             ),
-            CircularIcon(
+            CustomCircularIcon(
                 icon: Iconsax.add,
                 width: 32.w,
                 height: 32.h,

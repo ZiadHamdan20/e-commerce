@@ -12,8 +12,8 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/helpers/custom_helpers.dart';
 import '../../style/shadow_style.dart';
 import '../customShapes/rounded_container.dart';
-import '../icons/circular_icon.dart';
 import '../product_label_text.dart';
+import '../products/favourite_icon/favourite_icon.dart';
 import '../texts/brand_title_with verification_icon.dart';
 import '../texts/product_price_text.dart';
 
@@ -30,6 +30,7 @@ class CustomProductCardVertical extends StatelessWidget {
 
 
 
+    ///Container with side padding , color, edges, radius, and shadow
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(PagesNames.productDetails,arguments: [product]);
@@ -85,13 +86,10 @@ class CustomProductCardVertical extends StatelessWidget {
                   ),
 
                   /// --favourite Icon Button
-                  const Positioned(
+                   Positioned(
                     right: 0,
                     top: 0,
-                    child: CircularIcon(
-                      icon: Iconsax.heart5,
-                      iconColor: Colors.red,
-                    ),
+                    child: CustomFavouriteIcon(productId: product.id,),
                   ),
                 ],
               ),

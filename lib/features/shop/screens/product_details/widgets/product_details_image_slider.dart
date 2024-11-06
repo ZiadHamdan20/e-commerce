@@ -6,12 +6,11 @@ import 'package:ecommerce_app/utils/helpers/custom_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/widgets/appBar/custom_app_bar.dart';
 import '../../../../../common/widgets/appBar/custom_curved_edges_widget.dart';
-import '../../../../../common/widgets/icons/circular_icon.dart';
 import '../../../../../common/widgets/images/rounded_image.dart';
+import '../../../../../common/widgets/products/favourite_icon/favourite_icon.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 
@@ -79,8 +78,8 @@ class CustomProductImageSlider extends StatelessWidget {
             ),
 
             //appbar icons
-            const CustomAppBar(showBackArrow: true,
-              actions: [CircularIcon(icon: Iconsax.heart5,iconColor: Colors.red,)],)
+             CustomAppBar(showBackArrow: true,
+              actions: [CustomFavouriteIcon(productId: product.id,)],)
           ],
         ),
       ),

@@ -6,7 +6,8 @@ import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../common/widgets/productCart/product_card_horizontal.dart';
+import '../../../../common/widgets/product_cards/product_card_horizontal.dart';
+
 
 class SubCategoriesScreen extends StatelessWidget {
   const SubCategoriesScreen({super.key});

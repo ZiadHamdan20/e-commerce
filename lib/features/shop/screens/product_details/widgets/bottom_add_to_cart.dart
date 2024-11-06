@@ -27,11 +27,11 @@ class CustomBottomAddToCart extends StatelessWidget {
       children: [
         Row(
           children: [
-            CircularIcon(icon: Iconsax.minus,width: 40.w,height: 40.h,iconColor: Colors.white,backgroundColor: CustomColors.darkGrey,),
+            CustomCircularIcon(icon: Iconsax.minus,width: 40.w,height: 40.h,iconColor: Colors.white,backgroundColor: CustomColors.darkGrey,),
             SizedBox(width: CustomSizes.spaceBetweenItems.w,),
             Text("2",style: Theme.of(context).textTheme.titleSmall,),
             SizedBox(width: CustomSizes.spaceBetweenItems.w,),
-            CircularIcon(icon: Iconsax.add,width: 40.w,height: 40.h,iconColor: Colors.white,backgroundColor: CustomColors.black,),
+            CustomCircularIcon(icon: Iconsax.add,width: 40.w,height: 40.h,iconColor: Colors.white,backgroundColor: CustomColors.black,),
 
           ],
         ),

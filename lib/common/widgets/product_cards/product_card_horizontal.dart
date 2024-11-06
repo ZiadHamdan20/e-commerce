@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/common/widgets/customShapes/rounded_container.dart';
 import 'package:ecommerce_app/common/widgets/images/rounded_image.dart';
 import 'package:ecommerce_app/common/widgets/product_label_text.dart';
+import 'package:ecommerce_app/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:ecommerce_app/common/widgets/texts/brand_title_with%20verification_icon.dart';
 import 'package:ecommerce_app/common/widgets/texts/product_price_text.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
@@ -11,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../icons/circular_icon.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
   const ProductCardHorizontal({super.key});
@@ -62,20 +62,17 @@ class ProductCardHorizontal extends StatelessWidget {
                   ),
                 ),
 
-                //fav icon btn
-                const Positioned(
+                /// -- Fav icon button
+                 const Positioned(
                   right: 0,
                   top: 0,
-                  child: CircularIcon(
-                    icon: Iconsax.heart5,
-                    iconColor: Colors.red,
-                  ),
+                  child: CustomFavouriteIcon(productId: "")
                 ),
               ],
             ),
           ),
 
-          //details
+          /// -- Details
           SizedBox(
             width: 172.w,
             child: Padding(
@@ -98,7 +95,7 @@ class ProductCardHorizontal extends StatelessWidget {
                       //pricing
                       const Flexible(child: ProductPriceText(price: "250.0")),
 
-                      //add to cart button
+                      /// -- Add to cart button
                       Container(
                         decoration: const BoxDecoration(
                             color: CustomColors.dark,

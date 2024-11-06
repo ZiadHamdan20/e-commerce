@@ -15,7 +15,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/appbar/primary_header_container.dart';
 import '../../../../common/widgets/customShapes/search_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
-import '../../../../common/widgets/productCart/product_card_vertical.dart';
+import '../../../../common/widgets/product_cards/product_card_vertical.dart';
 import '../../../../routs/pages_names.dart';
 import '../../controllers/product/product_controller.dart';
 import '../../widgets/promo_slider.dart';
