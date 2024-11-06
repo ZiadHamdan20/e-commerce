@@ -232,7 +232,7 @@ onGenerateRoute(settings) {
     case PagesNames.subCategoriesScreen:
       return
         PageTransition(
-            child:  const SubCategoriesScreen(),
+            child:   SubCategoriesScreen(category:args[0]),
             type: PageTransitionType.leftToRight,
             duration: const Duration(milliseconds:500),
             settings: settings

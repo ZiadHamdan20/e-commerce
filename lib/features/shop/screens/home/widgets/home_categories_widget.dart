@@ -35,7 +35,7 @@ class CustomHomeCategories extends StatelessWidget {
               itemBuilder: (_, index) {
                 final category=categoryController.featuredCategories[index];
                 return CustomVerticalImageText(
-                  onTap: () {Navigator.of(context).pushNamed(PagesNames.subCategoriesScreen);},
+                  onTap: () {Navigator.of(context).pushNamed(PagesNames.subCategoriesScreen,arguments: [category]);},
                   image: category.image,
                   title: category.name,
                   // backgroundColor:isDarkMode? CustomColors.black:CustomColors.white,

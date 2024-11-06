@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
              PrimaryHeaderContainer(
                 child: Column(
               children: [
-                //AppBar
+                /// -- AppBar
                  const CustomHomeAppBar(),
                 SizedBox(height: CustomSizes.spaceBetweenSections.h/2,),
 
@@ -50,6 +50,7 @@ class HomeScreen extends StatelessWidget {
                     const EdgeInsets.only(left: CustomSizes.defaultSpace),
                     child: Column(
                         children: [
+                          /// -- Heading
                           const CustomSectionHeading(
                             headTitle: CustomTexts.popularCategories,textColor: Colors.white,
                             showActionBtn: false,
@@ -57,10 +58,9 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(
                             height: CustomSizes.spaceBetweenItems.h,
                           ),
+                          /// -- Categories
                           const CustomHomeCategories(),
                         ])),
-
-
 
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,)
 
