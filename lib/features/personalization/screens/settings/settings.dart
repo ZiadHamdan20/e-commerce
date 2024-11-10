@@ -54,7 +54,7 @@ class SettingsScreen extends StatelessWidget {
                    SettingsMenuTile(
                     onTap: (){Navigator.of(context).pushNamed(PagesNames.userAddressScreen);},
                     icon: Iconsax.safe_home,
-                    title: "My Address",
+                    title: "My Addresses",
                     subTitle: "Set shopping delivery address",
                     ),
 

@@ -13,7 +13,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return  TextFormField(
-      decoration: InputDecoration(prefixIcon:prefixIcon,labelText: labelText,suffixIcon:suffixIcon,),
+      decoration: InputDecoration(prefixIcon:prefixIcon,labelText: labelText,suffixIcon:suffixIcon,labelStyle: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 15,fontWeight: FontWeight.w500)),
     );
   }
 }
