@@ -27,22 +27,14 @@ class AddressController extends GetxController {
   /// Fetch all user specific addresses
   Future<List<AddressModel>> getAllUserAddresses() async {
     try {
+
+
       final addresses = await addressRepository.fetchUserAddresses();
-      print("Number of addresses fetched in controller: ${addresses.length}");
-      for (var address in addresses) {
-        print("Address: ${address.id}, ${address.street}");
-      }
       selectedAddress.value = addresses.firstWhere(
-              (element) => element.selectedAddress,
+          (element) => element.selectedAddress,
           orElse: () => AddressModel.empty());
       return addresses;
-      //
-      // final addresses = await addressRepository.fetchUserAddresses();
-      // selectedAddress.value = addresses.firstWhere(
-      //     (element) => element.selectedAddress,
-      //     orElse: () => AddressModel.empty());
-      // return addresses;
-      //
+
 
 
 

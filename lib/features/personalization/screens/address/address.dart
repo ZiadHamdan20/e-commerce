@@ -50,7 +50,6 @@ class UserAddressScreen extends StatelessWidget {
                     final response = CustomCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot);
                     if (response != null) return response;
                     final addresses = snapshot.data!;
-                    print("Number of addresses to display: ${addresses.length}");
 
 
                     return SizedBox(
@@ -60,7 +59,6 @@ class UserAddressScreen extends StatelessWidget {
                         itemCount: addresses.length,
                         itemBuilder: (_, index)
                         {
-                          print("Displaying address: ${addresses[index].id}");
                           return CustomSingleAddress(address: addresses[index],onTap: ()=>controller.selectAddress(addresses[index]));
 
                         }

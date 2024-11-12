@@ -37,7 +37,7 @@ class StoreScreen extends StatelessWidget {
             CustomTexts.store,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [CartCounterWidget(onPressed: () {})],
+          actions: const [CustomCartCounterIcon()],
         ),
         body: NestedScrollView(
           /// --Header

@@ -43,8 +43,8 @@ class CustomHomeAppBar extends StatelessWidget {
             }),
         ],
       ),
-      actions:  [
-        CartCounterWidget(iconColor: CustomColors.white, onPressed: () {  },)
+      actions:  const [
+        CustomCartCounterIcon(iconColor: CustomColors.white,)
       ],
     );
   }

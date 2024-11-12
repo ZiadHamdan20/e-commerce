@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 
 import '../../models/product_model.dart';
 import '../../models/product_variation_model.dart';
+import 'cart_controller.dart';
 
 class VariationController extends GetxController {
   static VariationController get instance => Get.find();
 
-  // Variables
+  /// Variables
   RxMap selectedAttributes = {}.obs;
   RxString variationStockStatus = ''.obs;
   Rx<ProductVariationModel> selectedVariation = ProductVariationModel.empty().obs;
@@ -24,6 +25,12 @@ class VariationController extends GetxController {
     //Show the selected variation image as Main Image
     if (selectedVariation.image.isNotEmpty) {
       ImagesController.instance.selectedProductImage.value=selectedVariation.image;
+    }
+    // Show selected variation quantity already in the cart.
+    if (selectedVariation.id.isNotEmpty) {
+      final cartController = CartController.instance;
+      cartController.productQuantityInCart.value = cartController.getVariationQuantityInCart(product.id, selectedVariation.id);
+
     }
 
     //Assign Selected Variation

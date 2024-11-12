@@ -5,7 +5,6 @@ import 'package:ecommerce_app/routs/pages_names.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../features/shop/models/product_model.dart';
 import '../../../utils/constants/colors.dart';
@@ -16,6 +15,7 @@ import '../product_label_text.dart';
 import '../products/favourite_icon/favourite_icon.dart';
 import '../texts/brand_title_with verification_icon.dart';
 import '../texts/product_price_text.dart';
+import 'add_to_cart_button.dart';
 
 class CustomProductCardVertical extends StatelessWidget {
   const CustomProductCardVertical({super.key, required this.product});
@@ -152,22 +152,7 @@ class CustomProductCardVertical extends StatelessWidget {
                 ),
 
                 /// -- Add To Cart Button
-                Container(
-                  decoration: const BoxDecoration(
-                      color: CustomColors.dark,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(CustomSizes.cardRadiusMd),
-                        bottomRight: Radius.circular(CustomSizes.productImageRadius),
-                      )),
-                  child: SizedBox(
-                      width: CustomSizes.iconLg.w * 1.2,
-                      height: CustomSizes.iconLg.h * 1.2,
-                      child: const Center(
-                          child: Icon(
-                            Iconsax.add,
-                            color: CustomColors.white,
-                          ))),
-                )
+                ProductCardAddToCartButton(product:product)
               ],
             )
 

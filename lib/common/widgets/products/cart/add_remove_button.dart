@@ -9,9 +9,10 @@ import '../../icons/circular_icon.dart';
 
 class CustomProductWithAddRemoveButton extends StatelessWidget {
   const CustomProductWithAddRemoveButton({
-    super.key,
+    super.key, required this.quantity, this.add, this.remove,
   });
-
+final int quantity;
+final VoidCallback? add,remove;
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +33,14 @@ class CustomProductWithAddRemoveButton extends StatelessWidget {
               backgroundColor: isDarkMode
                   ? CustomColors.darkerGrey
                   : CustomColors.light,
+
+              onPressed: remove,
             ),
             SizedBox(
               width: CustomSizes.spaceBetweenItems.w,
             ),
             Text(
-              "2",
+              quantity.toString(),
               style: Theme.of(context).textTheme.titleSmall,
             ),
             SizedBox(
@@ -49,7 +52,8 @@ class CustomProductWithAddRemoveButton extends StatelessWidget {
                 height: 32.h,
                 size: CustomSizes.md,
                 iconColor: CustomColors.white,
-                backgroundColor: CustomColors.primary),
+                backgroundColor: CustomColors.primary,
+                onPressed: add,),
           ],
 
         );
