@@ -53,7 +53,7 @@ class ProductDetailsScreen extends StatelessWidget {
 
                 SizedBox(height: CustomSizes.spaceBetweenSections.h,),
                 ///-- Description
-                const CustomSectionHeading(headTitle: "Description",showActionBtn: false,),
+                const CustomSectionHeading(headTitle: "Description",showActionButton: false,),
                 SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
                 ReadMoreText(
                   product.description??"",
@@ -70,7 +70,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomSectionHeading(headTitle: "Reviews(199)",showActionBtn: false,onPressed: (){},),
+                    CustomSectionHeading(headTitle: "Reviews(199)",showActionButton: false,onPressed: (){},),
                     IconButton(onPressed: (){
                       Navigator.of(context).pushNamed(PagesNames.productReviewsScreen);
                     }, icon: const Icon(Iconsax.arrow_right_3)),

@@ -40,12 +40,12 @@ class CartItemModel {
   /// -- Create a CartItem from a JSON Map
   factory CartItemModel.fromJson(Map<String, dynamic> json) {
     return CartItemModel(
-      productId: json['productId'],
-      title: json['title'],
-      price: json['price']?.toDouble(),
+      productId: json['productId']??"",
+      title: json['title']??"",
+      price: json['price']?.toDouble()??0.0,
       image: json['image'],
-      quantity: json['quantity'],
-      variationId: json['variantId'],
+      quantity: json['quantity']??0,
+      variationId: json['variantId']??"",
       brandName: json['brandName'],
       selectedVariation: json['selectedVariation'] != null ? Map<String, String>.from(json['selectedVariation']) : null,
     );

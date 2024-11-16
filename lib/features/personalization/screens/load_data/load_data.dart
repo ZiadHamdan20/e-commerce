@@ -1,9 +1,9 @@
-import 'package:ecommerce_app/common/widgets/listTiles/upload_data_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appBar/custom_app_bar.dart';
+import '../../../../common/widgets/list_tiles/upload_data_tile.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -31,7 +31,7 @@ class LoadDataScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
-                  const CustomSectionHeading(headTitle: CustomTexts.mainRecord,showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: CustomTexts.mainRecord,showActionButton: false,),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
                   CustomUploadDataListTile(
@@ -62,7 +62,7 @@ class LoadDataScreen extends StatelessWidget {
 
                   //Relationships
                   SizedBox(height: CustomSizes.spaceBetweenSections.h,),
-                  const CustomSectionHeading(headTitle: "Relationships",showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: "Relationships",showActionButton: false,),
                   Text("Make sure you have already uploaded all the content above.",style: Theme.of(context).textTheme.labelMedium!.copyWith(color: CustomColors.darkerGrey),),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 

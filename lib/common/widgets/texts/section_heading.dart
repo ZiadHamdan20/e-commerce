@@ -8,14 +8,14 @@ class CustomSectionHeading extends StatelessWidget {
     required this.headTitle,
     this.onPressed,
     this.textColor,
-    this.showActionBtn=true,
+    this.showActionButton=true,
   });
 
   final String btnTitle;
   final String headTitle;
   final void Function()? onPressed;
   final Color? textColor;
-  final bool showActionBtn;
+  final bool showActionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class CustomSectionHeading extends StatelessWidget {
       children: [
 
         Text(headTitle,style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: textColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
-        if(showActionBtn)  TextButton(onPressed:onPressed, child: Text(btnTitle))
+        if(showActionButton)  TextButton(onPressed:onPressed, child: Text(btnTitle))
       ],
     );
   }

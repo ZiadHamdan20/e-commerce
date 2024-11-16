@@ -26,7 +26,7 @@ class AllBrandsScreen extends StatelessWidget {
           child: Column(
             children: [
               /// -- Heading
-              const CustomSectionHeading(headTitle: "Brands",showActionBtn: false,),
+              const CustomSectionHeading(headTitle: "Brands",showActionButton: false,),
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
 

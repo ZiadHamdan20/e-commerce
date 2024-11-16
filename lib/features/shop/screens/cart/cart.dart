@@ -65,15 +65,7 @@ class CartScreen extends StatelessWidget {
           );
         }
       }),
-      // bottomNavigationBar: controller.cartItems.isEmpty?SizedBox():
-      // Padding(
-      //   padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-      //   child: ElevatedButton(
-      //       onPressed: () {
-      //         Navigator.of(context).pushNamed(PagesNames.checkoutScreen);
-      //       },
-      //       child:  Obx(()=> Text("Checkout \$${controller.totalCartPrice.value}"))),
-      // ),
+
     );
   }
 }

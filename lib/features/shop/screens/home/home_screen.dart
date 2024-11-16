@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                           /// -- Heading
                           const CustomSectionHeading(
                             headTitle: CustomTexts.popularCategories,textColor: Colors.white,
-                            showActionBtn: false,
+                            showActionButton: false,
                           ),
                           SizedBox(
                             height: CustomSizes.spaceBetweenItems.h,

@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(height: CustomSizes.spaceBetweenItems.h/2,),
               const Divider(),
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
-              const CustomSectionHeading(headTitle: CustomTexts.profileInformation,showActionBtn: false,),
+              const CustomSectionHeading(headTitle: CustomTexts.profileInformation,showActionButton: false,),
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
               const Divider(),
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
-              const CustomSectionHeading(headTitle: CustomTexts.personalInformation,showActionBtn: false,),
+              const CustomSectionHeading(headTitle: CustomTexts.personalInformation,showActionButton: false,),
 
               SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 

@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/features/shop/controllers/navigation_menu_controller.dart';
+import 'package:ecommerce_app/features/shop/screens/store/store.dart';
+import 'package:ecommerce_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/texts.dart';
 import 'package:ecommerce_app/utils/helpers/custom_helpers.dart';
@@ -6,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../personalization/screens/settings/settings.dart';
+import 'home/home_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -37,4 +41,16 @@ class NavigationMenu extends StatelessWidget {
 
     );
   }
+}
+class NavigationMenuController extends GetxController
+{
+  final Rx<int>selectedIndex=0.obs;
+  final  screens=[
+    const HomeScreen(),
+    const StoreScreen(),
+    const WishlistScreen(),
+    const SettingsScreen(),
+
+
+  ];
 }

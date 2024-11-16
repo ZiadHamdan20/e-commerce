@@ -12,7 +12,7 @@ import '../../../utils/constants/colors.dart';
 class CustomCartCounterIcon extends StatelessWidget {
   const CustomCartCounterIcon({
     super.key,
-     this.iconColor,
+    this.iconColor,
     this.counterBgColor,
     this.counterTextColor,
   });
@@ -41,13 +41,13 @@ class CustomCartCounterIcon extends StatelessWidget {
                 borderRadius: BorderRadius.circular(18)),
             child: Center(
               child: Obx(()=>
-                Text(
-                  controller.noOfCartItems.value.toString(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge!
-                      .apply(color: counterBgColor??(isDarkMode?CustomColors.black:CustomColors.white), fontSizeFactor: 0.8,),
-                ),
+                  Text(
+                    controller.noOfCartItems.value.toString(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelLarge!
+                        .apply(color: counterBgColor??(isDarkMode?CustomColors.black:CustomColors.white), fontSizeFactor: 0.8,),
+                  ),
               ),
             ),
           ),

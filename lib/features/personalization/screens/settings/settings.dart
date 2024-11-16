@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/common/widgets/appBar/custom_app_bar.dart';
 import 'package:ecommerce_app/common/widgets/appBar/primary_header_container.dart';
-import 'package:ecommerce_app/common/widgets/listTiles/settings_menu_tile.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
@@ -12,7 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../common/widgets/listTiles/user_profile_tile.dart';
+import '../../../../common/widgets/list_tiles/settings_menu_tile.dart';
+import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -48,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
 
               child: Column(
                 children: [
-                  const CustomSectionHeading(headTitle: CustomTexts.accountSettings,showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: CustomTexts.accountSettings,showActionButton: false,),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
                    SettingsMenuTile(
@@ -100,7 +100,7 @@ class SettingsScreen extends StatelessWidget {
 
                   //App settings
                   SizedBox(height: CustomSizes.spaceBetweenSections.h,),
-                  const CustomSectionHeading(headTitle: "App Settings",showActionBtn: false,),
+                  const CustomSectionHeading(headTitle: "App Settings",showActionButton: false,),
                   SizedBox(height: CustomSizes.spaceBetweenItems.h,),
 
 

@@ -32,12 +32,10 @@ class CustomCartItems extends StatelessWidget {
             final item=cartController.cartItems[index];
             return Column(
               children: [
+                /// Cart item
                  CustomCartItem(cartItem: item,),
-                if (showAddRemoveButtons)
-
-                  SizedBox(
-                    height: CustomSizes.spaceBetweenItems.h,
-                  ),
+                if (showAddRemoveButtons) SizedBox(height: CustomSizes.spaceBetweenItems.h,),
+                /// Add Remove Buttons row with total price
                 if (showAddRemoveButtons)  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
