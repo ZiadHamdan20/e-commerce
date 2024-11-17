@@ -12,7 +12,6 @@ class CustomChoiceChip extends StatelessWidget {
     required this.selected,
     this.onSelected,
   });
-
   final String text;
   final bool selected;
   final void Function(bool)? onSelected;

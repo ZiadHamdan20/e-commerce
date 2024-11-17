@@ -11,7 +11,6 @@ abstract class CustomTexts {
       "From Our DoorStep to Yours - Swift, Secure, and Contactless Delivery";
 
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Ziad Hamdan";
 
   static const String loginTitle = "Welcome back,";
   static const String loginSubtitle =
