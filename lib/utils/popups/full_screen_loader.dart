@@ -20,8 +20,8 @@ class CustomFullScreenLoader {
       barrierDismissible: false,
       // The dialog can't be dismissed by tapping outside it
       builder: (_) =>
-          PopScope(
-            canPop: false, // Disable popping with the back button
+          WillPopScope(
+            onWillPop:  () async => false,
             child: Container(
               color: CustomHelpers.isDarkMode(Get.context!)
                   ? CustomColors.dark
