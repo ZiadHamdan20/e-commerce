@@ -7,28 +7,28 @@ abstract class CustomCheckboxTheme
   static CheckboxThemeData lightCheckboxThemeData=CheckboxThemeData(
 
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith((states)
+    checkColor: WidgetStateProperty.resolveWith((states)
     {
-      return states.contains(MaterialState.selected) ?  CustomColors.white : CustomColors.black;
+      return states.contains(WidgetState.selected) ?  CustomColors.white : CustomColors.black;
     }
     ),
-    fillColor: MaterialStateProperty.resolveWith((states)
+    fillColor: WidgetStateProperty.resolveWith((states)
     {
-      return states.contains(MaterialState.selected) ?  CustomColors.primary : Colors.transparent;
+      return states.contains(WidgetState.selected) ?  CustomColors.primary : Colors.transparent;
     }
     ),
   );
   static CheckboxThemeData darkCheckboxThemeData=CheckboxThemeData(
 
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith((states)
+    checkColor: WidgetStateProperty.resolveWith((states)
     {
-      return states.contains(MaterialState.selected) ?  Colors.white : Colors.black;
+      return states.contains(WidgetState.selected) ?  Colors.white : Colors.black;
     }
     ),
-    fillColor: MaterialStateProperty.resolveWith((states)
+    fillColor: WidgetStateProperty.resolveWith((states)
     {
-      return states.contains(MaterialState.selected) ?  CustomColors.primary : Colors.transparent;
+      return states.contains(WidgetState.selected) ?  CustomColors.primary : Colors.transparent;
     }
     ),
   );
